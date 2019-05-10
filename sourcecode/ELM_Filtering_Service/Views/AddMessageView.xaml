@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="ELM_Filtering_Service.Views.AddMessage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ELM_Filtering_Service.Views"
+             mc:Ignorable="d"
+             Background="#EFF0F5"
+             d:DesignHeight="500" d:DesignWidth="650">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Name="rect_Border" BorderBrush="#E9EAEF" BorderThickness="10" Grid.ColumnSpan="3" Height="73" VerticalAlignment="Top" Width="650" HorizontalAlignment="Center"/>
+        <Rectangle Name="rect_Header" Fill="#FCFDFF" HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="650" Grid.ColumnSpan="3" Margin="0,0,0.333,0"/>
+        <TextBlock Name="txt_Login" Text="{Binding TextTitle}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" MinWidth="170" Margin="0 25 40 0" FontSize="15" Foreground="#012F4D" TextAlignment="Center"/>
+        <TextBlock Name="txt_Sender" Text="{Binding TextSender}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="60,0,0,0" MinWidth="100" FontSize="15" Foreground="#012F4D" TextAlignment="Left"/>
+        <TextBox x:Name="tb_Sender" Text ="{Binding TextBoxSender}" Height="30" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsEnabled="{Binding EnableSender}" Width="216" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Name="btn_Sender" Content="{Binding SenderButtonText}" Command="{Binding SenderButtonCommand}" Height="30" Grid.Row="0" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="40 0 0 0" Width="100" IsEnabled="{Binding EnableSender}" Background="#F06060" BorderThickness="0" Foreground="#E9EAEF" Grid.ColumnSpan="2"/>
+        <TextBlock Name="txt_Subject" Text="{Binding TextSubject}" Grid.Column="0" HorizontalAlignment="Left" Margin="60 25 0 0" VerticalAlignment="Top" MinWidth="100" FontSize="15" Foreground="#012F4D" Grid.Row="1" TextAlignment="Left"/>
+        <TextBox x:Name="tb_Subject" Text="{Binding TextBoxSubject}" Height="30" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" IsEnabled="{Binding EnableSubject}" MaxLength="20" Margin="0 20 0 0" Width="216" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_Body" Text="{Binding TextBoxBody}" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" Width="359" Height="221" IsEnabled="{Binding EnableBody}" MaxLength="{Binding MessageMax}" Grid.ColumnSpan="2" Margin="0 70 0 0" Grid.RowSpan="2"/>
+        <Button Name="btn_Process" Content="{Binding ProcessButtonText}" Command="{Binding ProcessButtonCommand}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="30" IsEnabled="{Binding EnableBody}" Background="#F06060" BorderThickness="0" Foreground="#E9EAEF" Margin="40 0 0 60"/>
+        <Button Name="btn_Clear" Content="{Binding ClearButtonText}" Command ="{Binding ClearButtonCommand}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="30" IsEnabled="{Binding EnableBody}" Background="#F06060" BorderThickness="0" Foreground="#E9EAEF" Margin="40 0 0 0"/>
+        <Button Name="btn_Import" Content="{Binding ImportButtonText}" Command ="{Binding ImportButtonCommand}" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="30" IsEnabled="{Binding EnableBody}" Background="#F06060" BorderThickness="0" Foreground="#E9EAEF" Margin="40 0 0 100"/>
+    </Grid>
+</UserControl>

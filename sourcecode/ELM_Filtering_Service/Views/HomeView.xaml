@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="ELM_Filtering_Service.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
+      	     xmlns:local="clr-namespace:ELM_Filtering_Service.Views"
+             mc:Ignorable="d"
+             Background="#EFF0F5"
+             d:DesignHeight="500" d:DesignWidth="650">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Name="rect_Border" BorderBrush="#E9EAEF" BorderThickness="10" Grid.ColumnSpan="3" Height="73" VerticalAlignment="Top" Width="650" HorizontalAlignment="Center"/>
+        <Rectangle Name="rect_Header" Fill="#FCFDFF" HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="650" Grid.ColumnSpan="3" Margin="0,0,0.333,0"/>
+        <TextBlock Name="txt_Login" Text="{Binding TextLogin}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" MinWidth="170" Margin="0 25 40 0" FontSize="15" Foreground="#012F4D" TextAlignment="Center"/>
+        <Image Name="img_User" Source="/Resources/User.png" Width="30" Height="30" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 50 0 0"/>
+        <TextBox Name="tb_Username" Text ="{Binding TextBoxUsername}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="140" Height="30" MaxLength="20" Margin="0 50 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Image Name="img_Password" Source="/Resources/Password.png" Width="30" Height="30" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 95 0 0"/>
+        <PasswordBox Name="pb_Password" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="140" Height="30" MaxLength="20" Margin="0 60 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Name="btn_Login" Content="{Binding LoginButtonText}" Command="{Binding LoginButtonCommand}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120" Margin="0 50 0 0" Height="30" Background="#F06060" BorderThickness="0" Foreground="#E9EAEF"/>
+    </Grid>
+</UserControl>
